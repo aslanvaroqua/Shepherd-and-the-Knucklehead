@@ -1,0 +1,81 @@
+<!--Force IE6 into quirks mode with this comment tag-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <%= stylesheet_link_tag    "application2" %>
+    <%= stylesheet_link_tag    "style" %>
+    <%= stylesheet_link_tag    "base" %>
+    <%= stylesheet_link_tag    "layout" %>
+    <%= stylesheet_link_tag    "reveal" %>
+    <%= stylesheet_link_tag    "skeleton" %>
+    <%= stylesheet_link_tag    "normalize" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <style>section {margin-top: 1%; padding: 20px; background: #333 ;}</style>
+<title>SNK PUB</title>
+</head>
+<body>
+                <div id="myModal" class="reveal-modal">
+     <h1>On Tap</h1>
+     Please see menu below or find us at beermenus.com.
+   <IFRAME SRC="http://www.beermenus.com/places/923-the-shepherd-the-knucklehead-pub" style="width:100%;" HEIGHT=450 ALIGN=middle></iframe>
+     <a class="close-reveal-modal">&#215;</a>
+</div>
+
+        <div id="ratebeer" class="reveal-modal">
+     <h1>Rate our Pub</h1>
+     Rate us at Beer Advocate.
+   <IFRAME SRC="http://beeradvocate.com/beer/profile/3017" WIDTH=1200 HEIGHT=450 ALIGN=middle></IFRAME></iframe>
+     <a class="close-reveal-modal">&#215;</a>
+</div>
+
+        <div id="foodmenu" class="reveal-modal">
+     <h1>Food Menu</h1>
+     Coming Soon!
+   <IFRAME SRC="http://www.google.com" WIDTH=1200 HEIGHT=450></iframe>
+     <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+
+  <div id="framecontent">
+    <div class="innertube">
+      <section class="round">
+        <%= render 'shared/navigation' %>
+      </section>
+    </div>
+  </div>
+  <div id="maincontent">
+	  <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+    <div class="innertube">
+	    <section class=nav>
+        <center>
+          <img src ="/assets/title2.png"><br>
+
+             </center>
+
+  
+ 
+      </section>
+      <section class="section1">
+
+        <%= yield %>
+     </section>
+    
+
+
+
+
+                  <div class="container clearfix" role="footer">
+      <div class="four columns offset-by-one omega">
+          <img src="/assets/title_1.png">
+      </div>
+  </div>
+</div>
+</body>
+
+</html>

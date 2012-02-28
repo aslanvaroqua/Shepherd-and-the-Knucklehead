@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @post.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+<h3>Add a comment:</h3>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+<style> #comment_body {width: 500px; height: 200px;} </style>
+  <div class="field">
+    <%= f.label :commenter %><br />
+    <%= f.text_field :commenter %>
+  </div>
+
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+    <br>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+ 
+<%= link_to 'Back to Posts', posts_path %> |
+

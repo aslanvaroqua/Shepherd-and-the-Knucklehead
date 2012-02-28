@@ -1,0 +1,79 @@
+<section class=round>
+<a>
+<%= link_to "Home", root_path %><br>
+<%= link_to "News/Blog", posts_path %><br>
+<%= link_to "The Pub", "/pub/index" %><br>
+<%= link_to "The Restaurant", "/rest/index" %><br>
+<%= link_to "Contact Us", "/messages/new" %><br>
+
+<% if user_signed_in? %>
+
+  <%= link_to('Edit account', edit_user_registration_path) %>
+
+<% else %>
+
+  <%= link_to('Mailing List', new_user_registration_path)  %>
+ 
+<% end %>
+
+<p>
+  <% if mobile_device? %>
+    <%= link_to "Full Site", :mobile => 0 %>
+  <% else %>
+    <%= link_to "Mobile Site", :mobile => 1 %>
+  <% end %>
+</p>
+</a>
+<br><br>
+
+</section>
+
+<section class =round>
+<center>
+
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  
+  rpp: 4,
+  interval: 30000,
+  width: 200,
+  height: 100,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#4aed05'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: false,
+    live: false,
+    behavior: 'all'
+  }
+}).render().setUser('@theshep_').start();
+</script>
+<br>
+
+
+    <tr>
+        <td align="center"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></td>
+    </tr>
+    
+        <tr>
+        <td align="center"><script src="http://widgets.fbshare.me/files/fbshare.js"></script></td>
+    </tr>
+
+    <tr>
+        <td align="center"><script src="http://www.stumbleupon.com/hostedbadge.php?s=5"></script></td>
+    </tr>
+</center>
+
+</section>

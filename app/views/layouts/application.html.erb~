@@ -1,0 +1,61 @@
+<!--Force IE6 into quirks mode with this comment tag-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <%= stylesheet_link_tag    "application2" %>
+    <%= stylesheet_link_tag    "base" %>
+    <%= stylesheet_link_tag    "layout" %>
+    <%= stylesheet_link_tag    "reveal" %>
+    <%= stylesheet_link_tag    "skeleton" %>
+    <%= stylesheet_link_tag    "normalize" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <style>section {margin-top: 1%; padding: 20px; background: #333 ;}</style>
+<title>SNK PUB</title>
+</head>
+<body>
+
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+  <div id="framecontent">
+    <div class="innertube">
+      <section class="round">
+        <%= render 'shared/navigation' %>
+      </section>
+    </div>
+  </div>
+  <div id="maincontent">
+	  <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+    <div class="innertube">
+	    <section class=nav>
+        <center>
+          <img src ="/assets/title2.png">   </center>
+ 
+      </section>
+      <section class=nav>
+              <div class="fb-like" data-href="http://shep.herokuapp.com" data-send="false" data-width="100" data-show-faces="true" data-font="arial"></div>
+      <section class="section1"></section>
+        <%= yield %>
+     </section>
+    </div>
+    <div class="container clearfix" role="footer">
+      <div class="four columns offset-by-one omega">
+          <img src="/assets/title_1.png">
+      </div>
+    </div>  
+  </div>
+</body>
+
+</html>

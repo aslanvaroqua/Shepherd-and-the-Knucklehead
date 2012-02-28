@@ -1,0 +1,75 @@
+<center>
+
+
+<a>
+<%= link_to "Home", root_path %><br>
+<%= link_to "News/Blog", posts_path %><br>
+<p>
+  <% if mobile_device? %>
+    <%= link_to "Full Site", :mobile => 0 %>
+  <% else %>
+    <%= link_to "Mobile Site", :mobile => 1 %>
+  <% end %>
+</p>
+</a>
+
+  </center>
+
+
+
+
+
+
+
+
+
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  
+  rpp: 4,
+  interval: 30000,
+  width: 200,
+  height: 100,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#4aed05'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: false,
+    live: false,
+    behavior: 'all'
+  }
+}).render().setUser('@theshep_').start();
+</script>
+
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like-box" data-href="http://www.facebook.com/pages/The-Shepherd-Knucklehead-Pub-Inc/104978566211647" data-width="205" data-height="250" data-colorscheme="dark" data-border-color="#333333" data-show-faces="true" data-stream="true" data-header="false"></div>
+
+
+
+
+
+
+
+
+
+

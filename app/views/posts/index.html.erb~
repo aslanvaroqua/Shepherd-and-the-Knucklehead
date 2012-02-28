@@ -1,0 +1,16 @@
+<h3>The Sheperd and The Knucklehead and Willy Lipitor and his Cholesterol Factory News and Blog and Other Stuff</h3><br>
+
+<p>
+<%= paginate @posts %> <br><br>
+<%= render @posts %> 
+
+  Written by: <br> <%= post.name %><br><br>
+  Title: <br> <%= post.title %><br><br><br>
+    <%= raw markdown(post.content) %> <br>      Posted <%= time_ago_in_words(post.created_at) %> ago.<br><br>
+   <%= link_to 'Add or View Comments', post %><br><br><br>
+  
+
+<% end %>
+</p>
+
+<br />

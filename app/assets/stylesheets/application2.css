@@ -1,0 +1,124 @@
+
+
+
+
+#flash_notice, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+#flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+
+
+
+#framecontent{
+position:  static;
+top: 0;
+bottom: 0; 
+left: 0;
+width: 280px; /*Width of frame div*/
+height: 100%;
+overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+background: #809c89 ;
+color: white;
+}
+
+#maincontent{
+position: fixed;
+top: 0; 
+left: 300px; /*Set left value to WidthOfFrameDiv*/
+right: 0;
+bottom: 0;
+overflow: auto; 
+background: #809c89 ;
+
+
+
+}
+
+html body {background: #809c89 ;}
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+min-height: 590px;
+max-height: 100%;
+
+  
+}
+
+.round2
+{
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+
+
+}
+
+
+.section1 {
+	
+	
+	  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+  width: 835px;
+  min-height: 450px;
+	
+}
+
+.nav {
+	
+		  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+  width: 835px;
+  
+
+	
+	
+}
+
+.innertube{
+
+margin: 15px; /*Margins for inner DIV inside each DIV (to provide padding)*/
+}
+
+* html body{ /*IE6 hack*/
+padding: 0 0 0 200px; /*Set value to (0 0 0 WidthOfFrameDiv)*/
+
+
+}
+
+* html #maincontent{ /*IE6 hack*/
+height: 100%; 
+width: 100%; }
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+  
+
+

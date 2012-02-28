@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+    <%= stylesheet_link_tag "/jqtouch/jqtouch.min.css", "/jqtouch/themes/apple/theme.min.css" %>
+    <%= javascript_include_tag "/jqtouch/jquery.1.3.2.min.js", "/jqtouch/jqtouch.min.js", "mobile" %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+  <style> 
+  
+  /* #Links
+================================================== */
+	a, a:visited { color: #999; text-decoration: underline; outline: 0; }
+	a:hover, a:focus { color: #000; }
+	p a, p a:visited { line-height: inherit; }
+
+
+h3 {color: #999}
+body {background: #111} li {color: #999;} section {background: #111; width; 200px;} </style>
+  <section class=round>
+<h3>Menu</h3>
+<a>
+<%= link_to "Home", root_path %><br>
+<%= link_to "News/Blog", posts_path %><br>
+<%= link_to "The Pub", "/pub/index" %><br>
+<%= link_to "The Restaurant", "/rest/index" %><br>
+<%= link_to "Contact Us", "/messages/new" %><br>
+
+<% if user_signed_in? %>
+
+  <%= link_to('Edit account', edit_user_registration_path) %>
+
+<% else %>
+
+  <%= link_to('Mailing List', new_user_registration_path)  %>
+ 
+<% end %>
+
+<p>
+  <% if mobile_device? %>
+    <%= link_to "Full Site", :mobile => 0 %>
+  <% else %>
+    <%= link_to "Mobile Site", :mobile => 1 %>
+  <% end %>
+</p>
+</a>
+
+</section>
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  
+  rpp: 4,
+  interval: 30000,
+  width: 200,
+  height: 100,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#4aed05'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: false,
+    live: false,
+    behavior: 'all'
+  }
+}).render().setUser('@theshep_').start();
+</script>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like" data-href="http://shep.herokuapp.com" data-send="false" data-width="100" data-show-faces="true" data-font="arial"></div>
+        
+
+
+
+    <% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Edit account', edit_user_registration_path) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Sign up', new_user_registration_path)  %>
+  </li>
+<% end %>
+
+  </body>
+</html>
